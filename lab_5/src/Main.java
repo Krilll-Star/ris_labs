@@ -9,26 +9,19 @@ public class Main {
      *
      * @param args the input arguments
      */
-    public static void main(String[] args)
-    {
-        List<String> al = new ArrayList<>();
-        al.add("Czech");
-        al.add("Russia");
-        al.add("Serbia");
-        al.add("Slovenia");
-        al.add("Slovakia");
-        al.add("Belarus");
-
-        String[] subStr;
-        Set<String> hs = new HashSet<>();
-
-        for (int i = 0; i < al.size(); i++){
-            subStr = al.get(i).split("");
-            for (int j = 0; j < subStr.length; j++){
-                hs.add(subStr[j]);
-            }
-        }
-
-        System.out.println(hs);
+    List<String> al = new ArrayList<>();
+    al.add("Czech");
+    al.add("Russia");
+    al.add("Serbia");
+    al.add("Slovenia");
+    al.add("Slovakia");
+    al.add("Belarus");
+    
+    Set<Character> hs = new HashSet<>();
+    for (String s : al)
+        for (int j = 0; j < s.length(); j++)
+            hs.add(s.charAt(j));
+    
+    System.out.println(hs);
     }
 }
